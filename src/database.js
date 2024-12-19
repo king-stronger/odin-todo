@@ -39,6 +39,14 @@ function remove(listname) {
     localStorage.removeItem(`${listname}_lastId`);
 }
 
+/**
+ * Returns the last id generated of the list
+ * @returns {number} The last id generated of a list
+ */
+function lastId(listname){
+    return parseInt(localStorage.getItem(`${listname}_lastId`)) || 0;
+}
+
 export default database = {
-    get, save, remove
+    get, save, remove, lastId
 }
