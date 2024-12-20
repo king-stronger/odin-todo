@@ -4,7 +4,7 @@
  * Depends on the database module
  */
 
-import database from "./database";
+import database from "../database";
 
 /**
  * 
@@ -25,20 +25,39 @@ function createTodo(projectId, title, description, dueDate, priority, completed=
 
     database.save(todo);
 
-    let edit = function(newData) {
-        for(let key in newData){
-            if(key !== "id" && key !== "projectId"){
-                todo[key] = newData[key] ?? todo[key];
-            }
-        }
-    }
-
     return {
         ...todo,
-        edit
     }
 }
 
-export {
-    createTodo
+function changeTitle(todo, newTitle) {
+    todo.title = newTitle;
+}
+
+function changeDescription(todo, newDescription){
+    todo.description = newDescription;
+}
+
+function changeDate(todo, newDate){
+    todo.date = newDate || todo.date;
+}
+
+function changeCompleted(todo){
+    todo.completed = !todo.completed;
+}
+
+function changePriority(todo, newPriority){
+    todo.priority = newPriority;
+}
+
+function get(id){
+    return database.find('todos', id);
+}
+
+function destroy(id){
+    database.remove('todos', id);
+}
+
+export default todo = {
+    createTodo, changeDate, changeCompleted, changeDescription, changePriority, changeTitle, get, destroy
 }
