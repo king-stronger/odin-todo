@@ -10,8 +10,13 @@
  * @param {string} listname The key name of the list to retrieve
  * @returns {Array} The retrieved list or an empty array if the key does not exist 
  */
-function get (listname) {
+function all (listname) {
     return JSON.parse(localStorage.getItem(listname)) || [];
+}
+
+function find(listname, id){
+    const list = JSON.parse(localStorage.getItem(listname));
+    return list[id];
 }
 
 /**
@@ -30,14 +35,27 @@ function save (listname, listobject) {
 }
 
 /**
+ * 
+ * @param {string} listname The key name of the list to retrieve
+ * @param {int} id the id of the item to remove
+ */
+function remove(listname, id){
+    let list = JSON.parse(localStorage.getItem(listname));
+    list.splice(id - 1, 1);
+    localStorage.setItem(listname, JSON.stringify(list));
+}
+
+
+/**
  * Delete the list a list from the local storage
  * @param {string} listname The key name of the list to retrieve
  * @returns {void}
  */
-function remove(listname) {
+function removeAll(listname) {
     localStorage.removeItem(listname);
     localStorage.removeItem(`${listname}_lastId`);
 }
+
 
 /**
  * Returns the last id generated of the list
@@ -48,5 +66,5 @@ function lastId(listname){
 }
 
 export default database = {
-    get, save, remove, lastId
+    all, find, save, remove, removeAll, lastId
 }
