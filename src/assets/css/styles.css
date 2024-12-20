@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --flow: 1rem;
+
+    --flex-gap: 1rem;
+    --flex-align: center;
+    --flex-direction: row;
+    --flex-justify: space-between;
+}
+
+
+/************************************** RESET CSS ******************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100dvh;
+    font-family: 'Roboto', serif;
+}
+
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+p {
+    max-width: 65ch;
+    text-wrap: pretty;
+}
+
+img, svg, video, picture {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    display: block;
+    cursor: pointer;
+    background: none;
+}
+
+button i:hover, a i:hover{
+    scale: 1.2;
+}
+
+input, select, textarea {
+    border: none;
+    outline: none;
+}
+
+input, select, textarea, button {
+    font: inherit
+}
+
+ul {
+    list-style-type: none;
+}
+/************************************** RESET CSS ******************************************/
+
+
+
+/************************************** REUSABLE CSS ******************************************/
+
+    /************************************** STRUCTURE ******************************************/
+    .flow > * + *{
+        margin-top: var(--flow);
+    }
+
+    .flow-lg > * + *{
+        margin-top: calc(var(--flow) * 3);
+    }
+
+    .flow-sm > * + *{
+        margin-top: calc(var(--flow) / 2);
+    }
+
+    .flex {
+        display: flex;
+        gap: var(--flex-gap);
+        align-items: var(--flex-align);
+        justify-content: var(--flex-justify);
+        flex-direction: var(--flex-direction);
+    }
+    /************************************** STRUCTURE ******************************************/
+
+    /************************************** TYPOGRAPHY ******************************************/
+    .title {
+        line-height: 1.2;
+        font-weight: bold;
+    }
+
+    .text {
+        line-height: 1.5;
+        font-weight: normal;
+    }
+
+    .paragraph, .small-text {
+        color: #666;
+        line-height: 1.5;
+        font-weight: 300;
+    }
+
+    .text-xl {
+        font-size: 3rem;
+    }
+
+    .text-lg {
+        font-size: 2rem;
+    }
+
+    .text-md {
+        font-size: 1.5rem;
+    }
+
+    .text-normal {
+        font-size: 1rem;
+    }
+
+    .text-sm {
+        font-size: 0.875rem;
+    }
+
+    .text-xs {
+        font-size: 0.75rem;
+    }
+    /************************************** TYPOGRAPHY ******************************************/
+
+
+    /************************************** UTILITIES ******************************************/
+
+
+    /************************************** UTILITIES ******************************************/
+
+/************************************** REUSABLE CSS ******************************************/
+
+#app {
+    display: flex;
+}
+
+/************************************** NAV ******************************************/
+.nav {
+    width: 250px;
+    padding: 1em;
+    height: 100vh;
+    background: lightgoldenrodyellow;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-button {
+    width: 100%;
+    padding: .5em;
+    text-align: left;
+    border-radius: .5rem;
+
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.nav-button:hover {
+    background-color: lightcoral;
+}
+
+.option {
+    margin-left: auto;
+}
+/************************************** NAV ******************************************/
+
+
+
+/************************************** MAIN ******************************************/
+.main {
+    width: 100%;
+    padding: 2em;
+}
+/************************************** MAIN ******************************************/
+
+
+/************************************** SECTIONS ******************************************/
+section {
+    margin-inline: auto;
+    width: min(100%, 600px);
+}
+/************************************** SECTIONS ******************************************/
+
+
+/************************************** PROJECT ******************************************/
+.todolist-item {
+    width: 100%;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #dee;
+
+    display: flex;
+    gap: 0.5rem;
+    align-items: start;
+
+}
+
+.priority {
+    padding-top: .35rem;
+}
+
+.todolist-options {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+/************************************** PROJECT ******************************************/
+
+
+/************************************** TODO ******************************************/
+
+/************************************** TODO ******************************************/
