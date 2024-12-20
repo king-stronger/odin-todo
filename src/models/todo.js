@@ -50,6 +50,18 @@ function changePriority(todo, newPriority){
     todo.priority = newPriority;
 }
 
+function edit(id, newData){
+    let todo = database.find(id);
+
+    for (let key in newData){
+        if(!['id', 'projectId'].includes(key) && Object.hasOwn(todo, key) && newData[key] !== null){
+            todo[key] = newData[key];
+        }
+    }
+
+    database.edit('todos', id, todo);
+}
+
 function get(id){
     return database.find('todos', id);
 }
@@ -59,5 +71,5 @@ function destroy(id){
 }
 
 export default todo = {
-    createTodo, changeDate, changeCompleted, changeDescription, changePriority, changeTitle, get, destroy
+    createTodo, changeDate, changeCompleted, changeDescription, changePriority, changeTitle, get, edit, destroy
 }

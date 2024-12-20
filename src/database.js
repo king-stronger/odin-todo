@@ -34,6 +34,14 @@ function save (listname, listobject) {
     localStorage.setItem(`${listname}_lastId`, lastId + 1);
 }
 
+
+function edit(listname, id, item){
+    let list = JSON.parse(localStorage.getItem(listname));
+    list[id] = item;
+    localStorage.setItem(listname, JSON.stringify(list));
+}
+
+
 /**
  * 
  * @param {string} listname The key name of the list to retrieve
@@ -66,5 +74,5 @@ function lastId(listname){
 }
 
 export default database = {
-    all, find, save, remove, removeAll, lastId
+    all, find, save, edit, remove, removeAll, lastId
 }
