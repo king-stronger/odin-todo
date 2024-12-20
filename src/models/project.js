@@ -12,7 +12,7 @@ import database from '../database';
  * @param {string} description The description of the project
  * @returns {Object} Returns a project with a function to edit itself
  */
-function createProject(name, description){
+function create(name, description){
     let id = database.lastId();
 
     let project = {
@@ -23,20 +23,13 @@ function createProject(name, description){
 
     database.save('projects', project);
 
-    let editProject = (newData) => {
-        for (let key in newData){
-            if(Object.hasOwn(project, key) && newData[key] !== null){
-                project[key] = newData[key];
-            }
-        }
-    }
-
     return {
         ...project,
         editProject
     };
 }
 
+
 export {
-    createProject
+    create, edit
 }

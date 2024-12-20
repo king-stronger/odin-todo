@@ -16,7 +16,7 @@ import database from "../database";
  * @param {boolean} completed to see if the todo has been completed
  * @returns {Object} returns a todo object
  */
-function createTodo(projectId, title, description, dueDate, priority, completed=false){
+function create(projectId, title, description, dueDate, priority, completed=false){
     let id = database.lastId('todo');
 
     let todo = {
@@ -71,5 +71,5 @@ function destroy(id){
 }
 
 export default todo = {
-    createTodo, changeDate, changeCompleted, changeDescription, changePriority, changeTitle, get, edit, destroy
+    create, changeDate, changeCompleted, changeDescription, changePriority, changeTitle, get, edit, destroy
 }
