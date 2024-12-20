@@ -29,7 +29,23 @@ function create(name, description){
     };
 }
 
+function edit(id, {name, description}){
+    let project = database.find(id);
+
+    project.name = name;
+    project.description = description;
+
+    database.edit('projects', id, project);
+}
+
+function get(id){
+    return database.find('projects', id);
+}
+
+function destroy(id){
+    database.remove('projects', id);
+}
 
 export {
-    create, edit
+    create, edit, get, destroy
 }
