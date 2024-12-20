@@ -34,10 +34,15 @@ function save (listname, listobject) {
     localStorage.setItem(`${listname}_lastId`, lastId + 1);
 }
 
-
-function edit(listname, id, item){
+/**
+ * 
+ * @param {string} listname the key of the list to edit
+ * @param {int} id The id of the data to replace
+ * @param {Object} data The data which will be replacing the old one 
+ */
+function edit(listname, id, data){
     let list = JSON.parse(localStorage.getItem(listname));
-    list[id] = item;
+    list[id] = data;
     localStorage.setItem(listname, JSON.stringify(list));
 }
 
