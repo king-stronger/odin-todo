@@ -4,7 +4,7 @@
  * Depends on the database module
  */
 
-import database from './database';
+import database from '../database';
 
 /**
  * 
