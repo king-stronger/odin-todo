@@ -1,5 +1,6 @@
 /**
- * project.js to create and edit projects
+ * project.js 
+ * Provides function to create and edit projects
  * Depends on the database module
  */
 
