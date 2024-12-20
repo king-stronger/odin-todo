@@ -30,24 +30,44 @@ function create(projectId, title, description, dueDate, priority, completed=fals
     }
 }
 
-function changeTitle(todo, newTitle) {
+function changeTitle(id, newTitle) {
+    let todo = database.find(id);
+
     todo.title = newTitle;
+
+    database.edit('todos', id, todo);
 }
 
-function changeDescription(todo, newDescription){
+function changeDescription(id, newDescription){
+    let todo = database.find(id);
+
     todo.description = newDescription;
+
+    database.edit('todos', id, todo);
 }
 
-function changeDate(todo, newDate){
+function changeDate(id, newDate){
+    let todo = database.find(id);
+
     todo.date = newDate || todo.date;
+
+    database.edit('todos', id, todo);
 }
 
-function changeCompleted(todo){
+function changeCompleted(id){
+    let todo = database.find(id);
+
     todo.completed = !todo.completed;
+
+    database.edit('todos', id, todo);
 }
 
-function changePriority(todo, newPriority){
+function changePriority(id, newPriority){
+    let todo = database.find(id);
+
     todo.priority = newPriority;
+
+    database.edit('todos', id, todo);
 }
 
 function edit(id, newData){

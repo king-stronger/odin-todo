@@ -46,6 +46,6 @@ function destroy(id){
     database.remove('projects', id);
 }
 
-export {
+export default project = {
     create, edit, get, destroy
 }
