@@ -1,16 +1,14 @@
 <link rel="stylesheet" href="assets/css/styles.css">
 
-<form action="" class="todo-form">
-    <div class="form-header"></div>
-    <span>Ajouter un projet</span>
-        <button class="link close-modal">X</button>
-    </div>
-    
+<form action="" class="form todo-form">
     <div class="form-body">
-        <input type="text" name="todo-title-input" id="todo-title-input" class="todo-title-input">
-        <textarea name="todo-description-input" id="" class="todo-description-input"></textarea>
+        <input type="text" name="todo-title-input" id="todo-title-input" 
+            placeholder="Ajoute un titre pour ta tache" class="todo-title-input">
+        <textarea name="todo-description-input" id="" class="todo-description-input"
+            placeholder="Ajoute une description pour ta tache"></textarea>
         <div>
             <select name="todo-priority-input" id="todo-priority-input" class="todo-priority-input">
+                <option disabled selected>Priority</option>
                 <option value="1">High</option>
                 <option value="2">Medium</option>
                 <option value="3">Low</option>

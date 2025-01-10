@@ -59,6 +59,7 @@ button i:hover, a i:hover{
 input, select, textarea {
     border: none;
     outline: none;
+    background: none;
 }
 
 input, select, textarea, button {
@@ -140,7 +141,18 @@ ul {
 
 
     /************************************** UTILITIES ******************************************/
+    .button {
+        padding: .5em 1em;
+        border-radius: .5em;
+    }
 
+    .btn-primary {
+        background: #ff5555;
+    }
+
+    .btn-secondary {
+        background: #ffdddd;
+    }
 
     /************************************** UTILITIES ******************************************/
 
@@ -226,5 +238,79 @@ section {
 
 
 /************************************** TODO ******************************************/
+.todo {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
 
+.todo-expanded {
+    display: flex;
+    column-gap: 2rem;
+    align-items: start;
+}
+
+.todo-summary {
+    --flow: .5rem;
+
+    display: flex;
+    row-gap: 2rem;
+    flex-direction: column;
+}
 /************************************** TODO ******************************************/
+
+/************************************** FORMS ******************************************/
+.form {
+    margin-inline: auto;
+    border-radius: .5rem;
+    width: min(500px, 100%);
+    box-shadow: 0 0 1px 1px #c0c0c0;
+}
+
+.form-header, .form-body, .form-footer {
+    padding: 1rem;
+}
+
+.form-body {
+    display: flex;
+    row-gap: 1rem;
+    flex-direction: column;
+    border-block: 1px solid #c0c0c0;
+
+    input, textarea, select {
+        width: 100%;
+        padding: .5em;
+        display: block;
+    }
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-footer {
+    display: flex;
+    column-gap: 1em;
+    justify-content: end;
+}
+/************************************** FORMS ******************************************/
+
+
+/************************************** PROJECT-FORM ******************************************/
+.project-form {
+    input, textarea, select {
+        border-radius: .5rem;
+        border: 1px solid #c0c0c0;
+    }
+}
+/************************************** PROJECT-FORM ******************************************/
+
+/************************************** TODO-FORM ******************************************/
+.todo-form {
+    select {
+        border-radius: .5rem;
+        border: 1px solid #c0c0c0;
+    }
+}
+/************************************** TODO-FORM ******************************************/
+
