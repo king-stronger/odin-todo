@@ -20,3 +20,5 @@ function generateProjectForm(){
         </form>   
     `;
 }
+
+export { generateProjectForm };
