@@ -51,3 +51,5 @@ function populateTodolist(selectedContainer, tasks){
 
     return container;
 }
+
+export { populateTodolist }
